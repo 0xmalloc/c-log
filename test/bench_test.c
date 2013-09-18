@@ -9,7 +9,7 @@
  * */
 int common_test()
 {
-	log_debug("testing write log befor log_init: %s\n", "haha");
+	log_debug("testing write log befor log_init: %s", "haha");
 }
 
 void test01()
@@ -29,7 +29,7 @@ void test01()
 	printf("Log size of each log:%d", strlen(_strbuf));	
 	for(i = 0; i < 1000000000; i++)
 	{
-		log_notice("%s [value:%d]\n", _strbuf, i);
+		log_notice("%s [value:%d]", _strbuf, i);
     }
 }
 

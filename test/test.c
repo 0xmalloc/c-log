@@ -8,7 +8,7 @@
  */
 int common_test()
 {
-	log_debug("testing write log befor log_init: %s\n", "haha");
+	log_debug("testing write log befor log_init: %s", "haha");
 }
 
 void test01()
@@ -17,7 +17,7 @@ void test01()
 	common_test();
     //init  log
 	//log_init(LL_TRACE, "mysql", "./log");
-	log_init(LL_TRACE, "mysql", "./");
+	log_init(LL_DEBUG, "mysql", "./");
     
 	int i;
 	char _strbuf[200*1024];
@@ -29,19 +29,19 @@ void test01()
 	}
 	common_test(); 
 	
-	for(i = 0; i < 1000000000; i++)
+	for(i = 0; i < 10; i++)
 	{
 		//sleep(1);
 		if(0 == (i% 5))
-			log_notice("%s [value:%d]\n", _strbuf, i);
+			log_notice("%s [value:%d] [xx:%d]", _strbuf, i, 10);
 		else if(1 == i % 5)
-			log_debug("%s [value:%d]\n", _strbuf, i); 
+			log_debug("%s [value:%d]", _strbuf, i); 
 		else if (2 == i % 5)
-			log_trace("%s [value:%d]\n", _strbuf, i);
+			log_trace("%s [value:%d]", _strbuf, i);
 		else if (3 == i % 5)
-			log_warn("%s [value:%d]\n", _strbuf, i);
+			log_warn("%s [value:%d]", _strbuf, i);
 		else 
-			log_error("%s [value:%d]\n", _strbuf, i);
+			log_error("%s [value:%d]", _strbuf, i);
     }
 }
 

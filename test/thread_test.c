@@ -34,15 +34,15 @@ void* test01(void *)
 		//测试日志是否立即写入到文件
 		sleep(1);
 		if(0 == (i% 5)) 
-            log_notice("%s [value:%d]\n", _strbuf, i);
+            log_notice("%s [value:%d]", _strbuf, i);
         else if(1 == i % 5)
-            log_debug("%s [value:%d]\n", _strbuf, i); 
+            log_debug("%s [value:%d]", _strbuf, i); 
         else if (2 == i % 5)
-            log_trace("%s [value:%d]\n", _strbuf, i);
+            log_trace("%s [value:%d]", _strbuf, i);
         else if (3 == i % 5)
-            log_warn("%s [value:%d]\n", _strbuf, i);
+            log_warn("%s [value:%d]", _strbuf, i);
         else    
-            log_error("%s [value:%d]\n", _strbuf, i);	
+            log_error("%s [value:%d]", _strbuf, i);	
 		if(quit)
 			break;
     }
@@ -61,7 +61,7 @@ int main()
 	for(; i < 20; i++)
 	{
 		ret = pthread_create(&pid[i], NULL, test01, NULL);
-		MACRO_WARN_RET(0 != ret, -1, "pthread_create error[ret:%d]\n", ret)
+		MACRO_WARN_RET(0 != ret, -1, "pthread_create error[ret:%d]", ret)
 	}
 	for(i = 0; i < 20; i++)
 	{

@@ -90,7 +90,7 @@ int Log_Writer::premakestr(char* m_buffer, LogLevel l)
 	now = time(&now);;
 	struct tm vtm; 
     localtime_r(&now, &vtm);
-    return snprintf(m_buffer, _LOG_BUFFSIZE, "%s: %02d-%02d %02d:%02d:%02d  %lu  ", logLevelToString(l),
+    return snprintf(m_buffer, _LOG_BUFFSIZE, "%s: %02d-%02d %02d:%02d:%02d ", logLevelToString(l),
             vtm.tm_mon + 1, vtm.tm_mday, vtm.tm_hour, vtm.tm_min, vtm.tm_sec);
 }
 
