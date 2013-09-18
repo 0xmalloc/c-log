@@ -7,9 +7,9 @@ you can use  "sh build.sh" to build the testing application and also i suggest y
 you can use this log module by the follow  guiding:
 ```cpp
     log_init(LL_TRACE, "mysql", "./log/");
-	log_notice("%s [time:%d]\n", "test calling log", time(NULL));
-	log_debug("debug msg,only write to log when the loglevel bigger than or equal to debug");
-	log_warn("warnning msg will be writing to the error files");
+	log_notice("%s [time:%d]", "test calling log", time(NULL));
+	log_debug("debug msg,only write to log when the loglevel bigger than or equal to debug [time:%d]", time(NULL));
+	log_warn("warnning msg will be writing to the error files [time:%d]", time(NULL));
 	log_error("you also can change  number of output files by rewrite the macro_define.h");
 ```
 and also you don't need to call close befor your application exit
