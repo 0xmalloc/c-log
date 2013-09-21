@@ -1,5 +1,5 @@
 ##What is c-log
-a fast ,stable and thread-safe log lib for C/C++ language
+a fast ,stable and thread-safe log lib(logger) for C/C++ language
 
 ##How to complie 
 you can use  "sh build.sh" to build the testing application and also i suggest you to `run "./bench_test" (single_thread)to see the performance`
