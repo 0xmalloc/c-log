@@ -34,15 +34,15 @@ void* test01(void *)
 		//测试日志是否立即写入到文件
 		sleep(1);
 		if(0 == (i% 5)) 
-            log_notice("%s [value:%d]", _strbuf, i);
+            LOG_NOTICE("%s [value:%d]", _strbuf, i);
         else if(1 == i % 5)
-            log_debug("%s [value:%d]", _strbuf, i); 
+            LOG_DEBUG("%s [value:%d]", _strbuf, i); 
         else if (2 == i % 5)
-            log_trace("%s [value:%d]", _strbuf, i);
+            LOG_TRACE("%s [value:%d]", _strbuf, i);
         else if (3 == i % 5)
-            log_warn("%s [value:%d]", _strbuf, i);
+            LOG_WARN("%s [value:%d]", _strbuf, i);
         else    
-            log_error("%s [value:%d]", _strbuf, i);	
+            LOG_ERROR("%s [value:%d]", _strbuf, i);	
 		if(quit)
 			break;
     }
