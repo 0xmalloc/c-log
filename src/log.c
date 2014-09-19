@@ -14,6 +14,7 @@ __thread char Log_Writer::m_buffer[_LOG_BUFFSIZE];
 
 bool log_init(LogLevel l, const char* p_modulename, const char* p_logdir)
 {
+	//如果路径存在文件夹，则判断是否存在
 	if (access (p_logdir, 0) == -1)
 	{
 		if (mkdir (p_logdir, S_IREAD | S_IWRITE ) < 0)
