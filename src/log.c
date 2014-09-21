@@ -6,6 +6,7 @@
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 Log_Writer WARN_W;
 Log_Writer INFO_W;
@@ -13,6 +14,12 @@ __thread char Log_Writer::m_buffer[_LOG_BUFFSIZE];
 
 bool log_init(LogLevel l, const char* p_modulename, const char* p_logdir)
 {
+	//如果路径存在文件夹，则判断是否存在
+	if (access (p_logdir, 0) == -1)
+	{
+		if (mkdir (p_logdir, S_IREAD | S_IWRITE ) < 0)
+			fprintf(stderr, "create folder failed\n");
+	}
 	char _location_str[_LOG_PATH_LEN];
 	snprintf(_location_str, _LOG_PATH_LEN, "%s/%s.access", p_logdir, p_modulename);	
 	INFO_W.loginit(l, _location_str);
