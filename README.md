@@ -1,7 +1,7 @@
-##What is c-log
+## What is c-log
 a fast ,stable and thread-safe log lib(logger) for C/C++ language
 
-##How to complie 
+## How to complie 
 you can use  "sh build.sh" to build the testing application and also i suggest you to `run "./bench_test" (single_thread)to see the performance`
 
 you can use this log module by the follow  guiding:
@@ -48,7 +48,7 @@ here is test result:
 what will be the next?
 
 
-##About Author
+## About Author
 
 ```javascript
   var 0xmalloc = {
