@@ -1,3 +1,6 @@
+## C-LOG
+[![Release Version](https://img.shields.io/badge/release-1.0.0-red.svg)](https://github.com/0xmalloc/c-log/releases) 
+
 ##What is c-log
 a fast ,stable and thread-safe log lib(logger) for C/C++ language
 
