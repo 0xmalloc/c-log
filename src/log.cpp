@@ -1,4 +1,4 @@
-#include "log.h"
+#include <c-log/log.h>
 #include <sys/file.h>
 #include <stdarg.h>
 #include <time.h>
@@ -17,7 +17,7 @@ bool log_init(LogLevel l, const char* p_modulename, const char* p_logdir)
 	//如果路径存在文件夹，则判断是否存在
 	if (access (p_logdir, 0) == -1)
 	{
-		if (mkdir (p_logdir, S_IREAD | S_IWRITE ) < 0)
+		if (mkdir (p_logdir, S_IREAD | S_IWRITE | S_IEXEC) < 0)
 			fprintf(stderr, "create folder failed\n");
 	}
 	char _location_str[_LOG_PATH_LEN];

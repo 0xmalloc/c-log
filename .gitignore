@@ -1,0 +1,9 @@
+# OS files
+*.DS_Store
+Thumbs.db
+
+# Build files
+build/
+
+# Built library files
+*.a
